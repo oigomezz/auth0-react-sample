@@ -5,6 +5,7 @@ import { NavBar, Footer } from "./components";
 import { Home, Profile, ExternalApi } from "./views";
 
 import "./app.css";
+import ProtectedRoute from "./auth/protected-ruote";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <div className="mt-5">
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/profile" component={Profile} />
+            <ProtectedRoute path="/profile" component={Profile} />
             <Route path="/external-api" component={ExternalApi} />
           </Switch>
         </div>
